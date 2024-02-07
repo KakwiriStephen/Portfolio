@@ -1,0 +1,45 @@
+@import "./base.scss";
+.skills {
+  position: relative;
+  font-size: 40px;
+  height: 300px;
+  background: $skills-color;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 1rem;
+  &__header {
+    font-weight: 900;
+  }
+  &__text {
+    position: absolute;
+    white-space: nowrap;
+    font-family: Orbitron, sans-serif;
+    font-size: 20px;
+    &--left {
+      left: 0;
+      top: 6rem;
+      animation: moveleft 30s linear infinite;
+      @keyframes moveleft {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+    }
+    &--right {
+      right: 0;
+      top: 11rem;
+      animation: movelright 30s linear infinite;
+      @keyframes movelright {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(50%, 0, 0);
+        }
+      }
+    }
+  }
+}

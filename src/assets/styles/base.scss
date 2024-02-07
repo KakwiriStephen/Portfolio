@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@100&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.cdnfonts.com/css/steelworks-vintage-demo");
+@import url("https://fonts.cdnfonts.com/css/head-injuries");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -34,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  overflow-wrap: hidden;
 }
 
 img,
@@ -54,5 +56,8 @@ ul {
 }
 
 // variables
-$greencolor: #6cff8c7a;
-$lightgreen: #91aa96;
+$greencolor: #6666b3;
+$lightgreen: #b3b3d9;
+$red-color: #f44336;
+$blue-color: #2196f3;
+$skills-color: #666666;
