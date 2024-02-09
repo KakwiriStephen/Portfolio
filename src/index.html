@@ -8,6 +8,7 @@
     <meta name="description" content="portfolio" />
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Favicon -->
 
@@ -199,32 +200,36 @@
       <!-- Swiper -->
       <div class="swiper__wrapper">
         <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="review">
-                svg
-                <div class="review__card">
-                  <div class="review__topborder"></div>
-                  <div class="review__text">
-                    <span>S</span>
-                    tephen is a great developer. He is very professional and
-                    always delivers on time. I would recommend him to anyone
-                    looking for a web developer.
-                  </div>
-                  <img src="assets/images/avatars/1.png" alt="" />
-                  <div class="review__profile">
-                    <span>KAKWIRI STEPHEN</span>
-                    <span>Web Developer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="swiper-wrapper"></div>
+        </div>
+        <div class="swiper__tools">
+          <div class="swiper__buttons">
+            <button class="swiper-button-prev">
+              <img src="assets/icons/rightArrow.png" alt="" />
+            </button>
+            <button class="swiper-button-next">
+              <img src="assets/icons/rightArrow.png" alt="" />
+            </button>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper__pagination"></div>
         </div>
       </div>
     </div>
 
     <script src="assets/js/app.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    </script>
   </body>
 </html>
