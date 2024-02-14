@@ -1,4 +1,4 @@
-import Swiper, { Pagination, Navigation } from "swiper";
+// import Swiper, { Pagination, Navigation } from "swiper";
 import gsap from "gsap";
 
 import { reviews } from "./data";
@@ -55,30 +55,33 @@ let barInterval = setInterval(() => {
     }
 }, 20);
 
-Swiper.use([Pagination, Navigation]);
-var swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    breakpoints: {
-        800: {
-            slidesPerView: 2,
-        },
-        1600: {
-            slidesPerView: 3,
-        },
-        1900: {
-            slidesPerView: 4,
-        },
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+//Handled in Main File
+
+// Swiper.use([Navigation, Pagination]);
+// var swiper = new Swiper(".swiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     breakpoints: {
+//         800: {
+//             slidesPerView: 2,
+//         },
+//         1600: {
+//             slidesPerView: 3,
+//         },
+//         1900: {
+//             slidesPerView: 4,
+//         },
+//     },
+//     pagination: {
+//         el: ".swiper-pagination",
+//         type: "bullets",
+//         clickable: true,
+//     },
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+// });
 
 const swiper_container = document.querySelector(".swiper-wrapper");
 reviews.map((review) => {
