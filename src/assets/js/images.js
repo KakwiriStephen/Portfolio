@@ -9,6 +9,15 @@ import avatar8 from "../images/avatars/8.png";
 import avatar9 from "../images/avatars/9.png";
 import avatar10 from "../images/avatars/10.png";
 import avatar11 from "../images/avatars/11.png";
+import bg1 from "../images/shapes/19.jpg";
+import bg2 from "../images/shapes/187.jpg";
+import bg3 from "../images/shapes/26.jpg";
+import bg4 from "../images/shapes/39.jpg";
+import bg5 from "../images/shapes/79.jpg";
+import bg6 from "../images/shapes/209.png";
+import bg7 from "../images/shapes/152.jpg";
+import bg8 from "../images/shapes/66.jpg";
+import me from "../images/me.jpeg";
 
 const images = {
     avatar1,
@@ -22,6 +31,15 @@ const images = {
     avatar9,
     avatar10,
     avatar11,
+    bg1,
+    bg2,
+    bg3,
+    bg4,
+    bg5,
+    bg6,
+    bg7,
+    bg8,
+    me,
 };
 
 export default images;

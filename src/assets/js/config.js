@@ -8,3 +8,4 @@ import "../styles/reviews.scss";
 import "../styles/swiper.scss";
 import "../styles/projects.scss";
 import "../styles/faq.scss";
+import "../styles/contact.scss";
