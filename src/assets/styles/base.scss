@@ -17,10 +17,14 @@
 html,
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    // overflow: auto;
+    // position: relative;
 }
 
 body {
     font-family: "Poppins", sans-serif;
+    width: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }

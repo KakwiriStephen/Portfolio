@@ -1,5 +1,5 @@
-// import Swiper, { Pagination, Navigation } from "swiper";
 import gsap from "gsap";
+import imagesLoaded from "imagesloaded";
 
 import { reviews } from "./data";
 const bar = document.querySelector(".loading__bar--inner");
@@ -39,49 +39,38 @@ let barInterval = setInterval(() => {
             duration: 2,
             border: "none",
         });
-        gsap.to(".loading", {
-            delay: 4,
-            duration: 2,
-            zIndex: 1,
-            background: "transaprent",
+        imagesLoaded(document.querySelector("img"), () => {
+            gsap.to(".loading", {
+                delay: 4,
+                duration: 2,
+                zIndex: -99,
+                background: "transaprent",
 
-            opacity: 0,
-        });
-        gsap.to(".loading__svg", {
-            delay: 2,
-            duration: 100,
-            rotate: "360deg",
+                opacity: 0,
+            });
+            gsap.to(".loading__svg", {
+                delay: 2,
+                duration: 100,
+                rotate: "360deg",
+            });
+            gsap.to("header", {
+                duration: 2,
+                delay: 4,
+                top: "0",
+            });
+            gsap.to(".socials", {
+                duration: 2,
+                delay: 4.5,
+                bottom: "10rem",
+            });
+            gsap.to(".scrollDown", {
+                duration: 2,
+                delay: 5,
+                bottom: "3rem",
+            });
         });
     }
 }, 20);
-
-//Handled in Main File
-
-// Swiper.use([Navigation, Pagination]);
-// var swiper = new Swiper(".swiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-//     breakpoints: {
-//         800: {
-//             slidesPerView: 2,
-//         },
-//         1600: {
-//             slidesPerView: 3,
-//         },
-//         1900: {
-//             slidesPerView: 4,
-//         },
-//     },
-//     pagination: {
-//         el: ".swiper-pagination",
-//         type: "bullets",
-//         clickable: true,
-//     },
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
-// });
 
 const swiper_container = document.querySelector(".swiper-wrapper");
 reviews.map((review) => {

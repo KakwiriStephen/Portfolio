@@ -1,5 +1,4 @@
 import * as THREE from "three";
-
 import images from "./images";
 
 const loader = new THREE.TextureLoader();
@@ -7,7 +6,7 @@ import vertex from "../shaders/vertex.glsl";
 import fragment from "../shaders/fragment.glsl";
 
 const texture1 = loader.load(images.me);
-//other images to be added incase of other texture
+
 function lerp(start, end, t) {
     return start * (1 - t) + end * t;
 }
@@ -32,20 +31,7 @@ class Shaded {
         };
         this.links.map((link, i) => {
             link.addEventListener("mouseenter", () => {
-                switch (i) {
-                    case 0:
-                        this.uniforms.uTexture.value = texture1;
-                        break;
-                    case 1:
-                        this.uniforms.uTexture.value = texture1;
-                        break;
-                    case 2:
-                        this.uniforms.uTexture.value = texture1;
-                        break;
-                    case 3:
-                        this.uniforms.uTexture.value = texture1;
-                        break;
-                }
+                this.uniforms.uTexture.value = texture1;
             });
 
             link.addEventListener("mouseleave", () => {
@@ -56,6 +42,7 @@ class Shaded {
         this.setupCamera();
         this.followMouseMove();
         this.createMesh();
+        this.render();
     }
 
     get viewport() {
@@ -83,14 +70,14 @@ class Shaded {
     }
 
     setupCamera() {
-        window.addEventListener("resize", onResize.bind(this));
+        window.addEventListener("resize", this.onResize.bind(this));
 
         let fov =
             (180 * (2 * Math.atan(this.viewport.height / 2 / this.perspective))) /
             Math.PI;
 
         this.camera = new THREE.PerspectiveCamera(
-            pov,
+            fov,
             this.viewport.aspectRatio,
             0.1,
             1000
@@ -118,8 +105,8 @@ class Shaded {
         });
 
         this.mesh = new THREE.Mesh(this.geometry, this.material);
-        this.sizes.set(370, 470, 1);
-        this.mesh.scale.set(this.sizes.x, this.sizes, y, 1);
+        this.sizes.set(270, 320, 1);
+        this.mesh.scale.set(this.sizes.x, this.sizes.y, 1);
         this.mesh.position.set(this.offset.x, this.offset.y, 0);
         this.scene.add(this.mesh);
     }
@@ -139,4 +126,30 @@ class Shaded {
         this.renderer.setSize(this.viewport.width, this.viewport.height);
         this.camera.updateProjectionMatrix();
     }
+
+    render() {
+        this.offset.x = lerp(this.offset.x, this.targetX, 0.1);
+        this.offset.y = lerp(this.offset.y, this.targetY, 0.1);
+        this.uniforms.uOffset.value.set(
+            (this.targetX - this.offset.x) * 0.0006, -(this.targetY - this.offset.y) * 0.0006
+        );
+        this.mesh.position.set(
+            this.offset.x - window.innerWidth / 2, -this.offset.y + window.innerHeight / 2
+        );
+        this.hovered ?
+            (this.uniforms.uAlpha.value = lerp(
+                this.uniforms.uAlpha.value,
+                1.0,
+                0.1
+            )) :
+            (this.uniforms.uAlpha.value = lerp(
+                this.uniforms.uAlpha.value,
+                0.0,
+                0.1
+            ));
+        this.renderer.render(this.scene, this.camera);
+        window.requestAnimationFrame(this.render.bind(this));
+    }
 }
+
+new Shaded();
