@@ -17,29 +17,50 @@ import bg5 from "../images/shapes/79.jpg";
 import bg6 from "../images/shapes/209.png";
 import bg7 from "../images/shapes/152.jpg";
 import bg8 from "../images/shapes/66.jpg";
+import bg9 from "../images/20.jpg";
+import bg10 from "../images/177.jpg";
 import me from "../images/me.jpeg";
 
+//projects
+
+import project1 from "../images/projects/cart.jpg";
+import project2 from "../images/projects/nat.jpg";
+import project3 from "../images/projects/web3.jpg";
+import project4 from "../images/projects/ecom.jpg";
+import project5 from "../images/projects/analysis.jpg";
+import project6 from "../images/projects/saf.jpg";
+import project7 from "../images/projects/inv.jpg";
+
 const images = {
-    avatar1,
-    avatar2,
-    avatar3,
-    avatar4,
-    avatar5,
-    avatar6,
-    avatar7,
-    avatar8,
-    avatar9,
-    avatar10,
-    avatar11,
-    bg1,
-    bg2,
-    bg3,
-    bg4,
-    bg5,
-    bg6,
-    bg7,
-    bg8,
-    me,
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar4,
+  avatar5,
+  avatar6,
+  avatar7,
+  avatar8,
+  avatar9,
+  avatar10,
+  avatar11,
+  bg1,
+  bg2,
+  bg3,
+  bg4,
+  bg5,
+  bg6,
+  bg7,
+  bg8,
+  bg9,
+  bg10,
+  me,
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
 };
 
 export default images;
